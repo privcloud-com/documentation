@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AccountProfileWithCreditCard",
+  "description": "This is an example record type schema of profile data that includes Credit Card. All record types in PrivCloud follow the JSON Schema specification (https://json-schema.org). More examples can be found on the PrivCloud GitHub site and here @ https://json-schema.org/learn/miscellaneous-examples.html",
+  "type": "object",
+  "required": ["accountNumber","firstName","lastName","address","creditCards"],
+  "properties": {
+    "acccountNumber": {
+      "type": "string",
+      "description": "The person's first name.",
+      "pattern": "^[0-9]{8}$",
+      "encrypt": false,
+      "comment": "Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+    },
+    "firstName": {
+      "type": "string",
+      "description": "The person's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The person's last name."
+    },
+    "address": {
+      "description": "The person's address",
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "The street of the address."
+        },
+        "city": {
+          "type": "string",
+          "description": "The city of the address."
+        },
+        "state": {
+          "type": "string",
+          "description": "The state of the address."
+        },
+        "zip": {
+          "type": "string",
+          "description": "The zip code of the address.",
+          "pattern": "^[0-9]{5}"
+        }
+      }
+    },
+    "creditCards": {
+      "description": "The list of credit cards stored in PrivCloud for the person",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/creditCard"
+      }
+    }
+  },
+  "definitions": {
+    "creditCard": {
+      "type": "object",
+      "description": "The credit card object",
+      "properties": {
+        "ccNumber": {
+          "type": "string",
+          "description": "The credit card number",
+          "pattern": "([0-9]{4}-){3}[0-9]{4}|[0-9]{16}",
+          "comment": "Do not use this regex for a credit card"
+        },
+        "provider": {
+          "type": "string",
+          "description": "The credit card provider",
+          "pattern": "^(VISA|MASTERCARD|DISCOVER|AMERICAN EXPRESS)$"
+        },
+        "expirationMonth": {
+          "type": "number",
+          "description": "The expiration month on the credit card",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "expirationYear": {
+          "type": "number",
+          "description": "The expiration year on the credit card",
+          "minimum": 2021,
+          "maximum": 2030
+        },
+        "zip": {
+          "type": "string",
+          "description": "The zip code associated with the credit card.",
+          "pattern": "^[0-9]{5}"
+        },
+        "isDefault": {
+          "type": "boolean",
+          "description": "Whether the credit card is the default to use",
+          "pattern": "^[0-9]{5}"
+        }
+      }
+    }
+  }
+}

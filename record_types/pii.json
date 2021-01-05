@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Person",
+  "description": "This is an example PII record type for PrivCloud. This example is to show what it looks like to define a PII record type in PrivCloud. All record types in PrivCloud follow the JSON Schema specification (https://json-schema.org). More examples can be found on the PrivCloud GitHub site and here @ https://json-schema.org/learn/miscellaneous-examples.html",
+  "type": "object",
+  "required": ["firstName", "lastName", "address", "emailAddresses"],
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "The person's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The person's last name."
+    },
+    "age": {
+      "description": "Age in years which must be equal to or greater than zero.",
+      "type": "integer",
+      "minimum": 0,
+      "encrypt": false,
+      "comment": "Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+    },
+    "address": {
+      "description": "The person's address",
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "The street of the address."
+        },
+        "city": {
+          "type": "string",
+          "description": "The city of the address."
+        },
+        "state": {
+          "type": "string",
+          "description": "The state of the address."
+        },
+        "zip": {
+          "type": "number",
+          "description": "The zip code of the address."
+        }
+      }
+    },
+    "emailAddresses": {
+      "description": "The list of email addresses for the person",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/email"
+      }
+    }
+  },
+  "definitions": {
+    "email": {
+      "type": "string",
+      "description": "An email address. The pattern below isn't the best for email addresses, but it servers the purpose for the example.",
+      "pattern": "[^@]+@[^@]+\\.[^@]+"
+    }
+  }
+}
