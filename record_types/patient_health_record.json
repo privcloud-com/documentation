@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PatientHealthRecord",
+  "description": "This is an example record type schema of data that would be stored in an EHR/EMR. All record types in PrivCloud follow the JSON Schema specification (https://json-schema.org). More examples can be found on the PrivCloud GitHub site and here @ https://json-schema.org/learn/miscellaneous-examples.html",
+  "type": "object",
+  "required": ["socialSecurityNumber","patientIDD","firstName","lastName","phoneNumber", "address", "employmentStatus", "race", "age", "gender", "medications", "vitals"],
+  "properties": {
+    "socialSecurityNumber": {
+      "type": "string",
+      "description": "The social security number of the patient.",
+      "pattern": "^[0-9]{3}\\-[0-9]{2}\\-[0-9]{4}$"
+    },
+    "patientIDD": {
+      "type": "string",
+      "description": "The identification number of the patient.",
+      "pattern": "^[0-9]{8}$"
+    },
+    "firstName": {
+      "type": "string",
+      "description": "The first name of the patient."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The last name of the patient."
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "The primary contact number for the patient.",
+      "pattern": "^(\\+[0-9]{1,2}\\s)?\\(?[0-9]{3}\\)?[\\s.-][0-9]{3}[\\s.-][0-9]{4}$",
+      "comment": "Don't use this regex for phone numbers."
+    },
+    "address": {
+      "description": "The patient's address",
+      "type": "object",
+      "required": ["street", "city", "state", "zip"],
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "The street of the address."
+        },
+        "city": {
+          "type": "string",
+          "description": "The city of the address."
+        },
+        "state": {
+          "type": "string",
+          "description": "The state of the address."
+        },
+        "zip": {
+          "type": "string",
+          "description": "The zip code of the address.",
+          "pattern": "^[0-9]{5}"
+        }
+      }
+    },
+    "employmentStatus": {
+      "type": "string",
+      "description": "The employment status of the patient.",
+      "pattern": "^(employed|unemployed|self employed|other)$"
+    },
+    "race": {
+      "type": "string",
+      "description": "The race of the patient.",
+      "pattern": "^(American Indian or Alaska Native|Asian|Black or African American|Hispanic or Latino|White|Native Hawaiian or Other Pacific Islander)$"
+    },
+    "age": {
+      "type": "number",
+      "description": "The age of the the patient.",
+      "minimum": 0,
+      "maximum": 130
+    },
+    "gender": {
+      "description": "The gender of the patient",
+      "type": "string",
+      "pattern": "^(male|female|non\\-binary|transgender|not listed|prefer not to say){5}"
+    },
+    "medications": {
+      "type": "array",
+      "description": "The list of medications the patient is taking",
+      "items": {
+        "$ref": "#/definitions/medication"
+      }
+    },
+    "vitals": {
+      "type": "array",
+      "description": "The historical vitals for the patient",
+      "items": {
+        "$ref": "#/definitions/vital"
+      }
+    }
+  },
+  "definitions": {
+    "medication": {
+      "type": "object",
+      "description": "The medication object",
+      "required": ["name", "startDate", "refills"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The medication name",
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The start date for the medication"
+        },
+        "refills": {
+          "type": "number",
+          "description": "The number of refills for the medication",
+          "minimum": 0,
+          "maximum": 10
+        }
+      }
+    },
+    "vital" : {
+      "type": "object",
+      "description": "A vitals record for the patient",
+      "required": ["bpDiastolic", "bpSystolic", "heartRate"],
+      "properties": {
+        "bpSystolic" : {
+          "type": "number",
+          "description": "The systolic measure of the blood pressure for the patient.",
+          "minimum": 0,
+          "maximum": 200
+        },
+        "bpDiastolic" : {
+          "type": "number",
+          "description": "The diastolic measure of the blood pressure for the patient.",
+          "minimum": 0,
+          "maximum": 200
+        },
+        "heartRate" : {
+          "type": "number",
+          "description": "The number of beats per minute for the patients heart rate.",
+          "minimum": 0,
+          "maximum": 200
+        },
+        "temperature" : {
+          "type": "number",
+          "description": "The temperature of the patient.",
+          "minimum": 90,
+          "maximum": 110
+        },
+        "respiratory" : {
+          "type": "number",
+          "description": "The number of breaths per minute for the patient.",
+          "minimum": 5,
+          "maximum": 100
+        }
+      }
+    }
+  }
+}

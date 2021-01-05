@@ -1,5 +1,5 @@
 env/
-*secrets*
+record_types/secrets_record.json
 __pycache__
 .idea
 db_data/

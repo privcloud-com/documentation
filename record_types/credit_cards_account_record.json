@@ -10,7 +10,7 @@
       "description": "The person's first name.",
       "pattern": "^[0-9]{8}$",
       "encrypt": false,
-      "comment": "Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+      "comment": "By default, all records in PrivCloud are encrypted. Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
     },
     "firstName": {
       "type": "string",
@@ -21,8 +21,9 @@
       "description": "The person's last name."
     },
     "address": {
-      "description": "The person's address",
+      "description": "The person's address.",
       "type": "object",
+      "required": ["street", "city", "state", "zip"],
       "properties": {
         "street": {
           "type": "string",
@@ -54,28 +55,29 @@
   "definitions": {
     "creditCard": {
       "type": "object",
-      "description": "The credit card object",
+      "description": "The credit card object.",
+      "required": ["ccNumber", "provider", "expirationYear", "expirationMonth", "zip", "isDefault"],
       "properties": {
         "ccNumber": {
           "type": "string",
-          "description": "The credit card number",
+          "description": "The credit card number.",
           "pattern": "([0-9]{4}-){3}[0-9]{4}|[0-9]{16}",
           "comment": "Do not use this regex for a credit card"
         },
         "provider": {
           "type": "string",
-          "description": "The credit card provider",
+          "description": "The credit card provider.",
           "pattern": "^(VISA|MASTERCARD|DISCOVER|AMERICAN EXPRESS)$"
         },
         "expirationMonth": {
           "type": "number",
-          "description": "The expiration month on the credit card",
+          "description": "The expiration month on the credit card.",
           "minimum": 1,
           "maximum": 12
         },
         "expirationYear": {
           "type": "number",
-          "description": "The expiration year on the credit card",
+          "description": "The expiration year on the credit card.",
           "minimum": 2021,
           "maximum": 2030
         },

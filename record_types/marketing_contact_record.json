@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MarketingRecord",
+  "description": "This is a record type intended to store marketing contacts within PrivCloud. This example is to show what it looks like to define a PII record type in PrivCloud. All record types in PrivCloud follow the JSON Schema specification (https://json-schema.org). More examples can be found on the PrivCloud GitHub site and here @ https://json-schema.org/learn/miscellaneous-examples.html",
+  "type": "object",
+  "required": ["firstName", "lastName", "jobTitle", "jobFunction", "jobLevel", "company", "companyAddress", "emailAddresses"],
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "The contact's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The contact's last name."
+    },
+    "jobTitle": {
+      "type": "string",
+      "description": "The contact's title.",
+      "encrypt": false,
+      "comment": "By default, all records in PrivCloud are encrypted. Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+    },
+    "jobFunction": {
+      "type": "string",
+      "description": "The contact's job function.",
+      "pattern": "^(Operations|Marketing|Finance|Accounting|Technology|Sales|Support|Services)$"
+    },
+    "jobLevel": {
+      "type": "string",
+      "description": "The level of the contact's job.",
+      "pattern": "^(C-Level|EVP/Executive Director|SVP/VP|Director|Manager|Individual Contributor|Contractor|Consultant|Part\\-Time Employee)$",
+      "encrypt": false,
+      "comment": "By default, all records in PrivCloud are encrypted. Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+    },
+    "company": {
+      "type": "string",
+      "description": "The company that the contact works at.",
+      "encrypt": false,
+      "comment": "By default, all records in PrivCloud are encrypted. Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+    },
+    "companySizeEmployees": {
+      "type": "string",
+      "description": "The size of the company in employees.",
+      "pattern": "^(1-50|51-200|201-500|501-5000|5001-20000|20001\\+)$",
+      "encrypt": false,
+      "comment": "By default, all records in PrivCloud are encrypted. Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+    },
+    "industry": {
+      "type": "string",
+      "description": "The contact's title.",
+      "pattern": "^(Association/Non\\-Profit|Hospitality|Federal|Industrials|Professional Services|Technology|Insurance|Legal|Healthcare|Financial|Insurance|Media|Consumer Packaged Goods|Energy|Transportation)$",
+      "encrypt": false,
+      "comment": "By default, all records in PrivCloud are encrypted. Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting."
+    },
+    "companyAddress": {
+      "description": "The contact's address.",
+      "type": "object",
+      "encrypt": false,
+      "comment": "By default, all records in PrivCloud are encrypted. Use 'encrypt': false to store the data in PrivCloud unencrypted. This is useful for searching and reporting.",
+      "required": ["street", "city", "state", "zip"],
+      "properties": {
+        "street": {
+          "type": "string",
+          "description": "The street of the address."
+        },
+        "city": {
+          "type": "string",
+          "description": "The city of the address."
+        },
+        "state": {
+          "type": "string",
+          "description": "The state of the address."
+        },
+        "zip": {
+          "type": "number",
+          "description": "The zip code of the address."
+        }
+      }
+    },
+    "emailAddresses": {
+      "description": "The list of email addresses for the person.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/email"
+      },
+    "phoneNumber": {
+      "type": "string",
+      "description": "The primary contact number for the patient.",
+      "pattern": "^(\\+[0-9]{1,2}\\s)?\\(?[0-9]{3}\\)?[\\s.-][0-9]{3}[\\s.-][0-9]{4}$",
+      "comment": "Don't use this regex for phone numbers."
+    }
+    }
+  },
+  "definitions": {
+    "email": {
+      "type": "string",
+      "description": "An email address. The pattern below isn't the best for email addresses, but it servers the purpose for the example.",
+      "pattern": "[^@]+@[^@]+\\.[^@]+"
+    }
+  }
+}
