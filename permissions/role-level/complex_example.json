@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "comment": "This is a complex example that shows how to use all components of the permissions model to accomplish a business, security, and compliance objectives.",
+  "rules": [
+    {
+      "comment": "Deny any request to the 'NorthAmerica' workspace that is not from the US or Canada. Deny rules ALWAYS take precedence over allow rules.",
+      "requestors": [
+        "pcrn:12345678:*/*"
+      ],
+      "actions": [
+        "pcrn:12345678:action/*:*"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/workspaces:NorthAmerica:containers:*:records:*"
+      ],
+      "decision": "deny",
+      "conditions": {
+        "not_from_countries": [
+          "USA",
+          "CAN"
+        ]
+      }
+    },
+    {
+      "comment": "Allow record read, update, delete and list requests to records tagged 'Safe' or 'P1' in the 'Product1' container in the 'NorthAmerica' workspace from the US and Canada to any user or application but only from a certain IP address, at certain times, and enforce MFA.",
+      "requestors": [
+        "pcrn:12345678:*/*"
+      ],
+      "actions": [
+        "pcrn:12345678:action/records:get",
+        "pcrn:12345678:action/records:list",
+        "pcrn:12345678:action/records:update",
+        "pcrn:12345678:action/records:delete"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/workspaces:NorthAmerica:containers:*:records:*"
+      ],
+      "decision": "allow",
+      "conditions": {
+        "record_tag": [
+          "Safe",
+          "P1"
+        ],
+        "from_countries": [
+          "USA",
+          "CAN"
+        ],
+        "from_IP_cidrs": [
+          "12.34.8.0/24",
+          "43.44.32.87/32"
+        ],
+        "multifactor_authentication_present": true,
+        "days_of_the_week": [
+          "monday",
+          "wednesday",
+          "friday"
+        ],
+        "between_times": {
+          "start_time": "11:00:00",
+          "end_time": "14:00:00"
+        }
+      }
+    },
+    {
+      "comment": "Workspace and container creation along with user creation and updating (but not deletion) to 'somewhat-admin-user'",
+      "requestors": [
+        "pcrn:12345678:user/somewhat-admin-user"
+      ],
+      "actions": [
+        "pcrn:12345678:action/workspaces:create",
+        "pcrn:12345678:action/container:create",
+        "pcrn:12345678:action/user:create",
+        "pcrn:12345678:action/user:update"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/*:*"
+      ],
+      "decision": "allow",
+      "conditions": {
+      }
+    }
+  ]
+}

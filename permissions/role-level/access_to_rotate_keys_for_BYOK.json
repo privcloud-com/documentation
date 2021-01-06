@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "comment": "This example shows how to create a permission that can be used to grant key rotation (BYOK) privileges in the 'Product1' container in the 'SaaS-Applications' workspace. In this case, this permission is allowing the user dtijerina-keyrotationspecialist or the application app-integration-keyrotationspecialist super admin privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-keyrotationspecialist or the application app-integration-keyrotationspecialist.",
+      "requestors": [
+        "pcrn:12345678:user/dtijerina-keyrotationspecialist",
+        "pcrn:12345678:application/app-integration-keyrotationspecialist"
+      ],
+      "actions": [
+        "pcrn:12345678:action/containers:update"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1"
+      ],
+      "decision": "allow",
+      "conditions": {}
+    }
+  ]
+}

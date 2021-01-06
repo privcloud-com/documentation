@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "comment": "This example shows how to create a container permission that would deny access for any user or application to the container or its records from outside of the United States. Container permissions apply to the container itself and any associated records within that container so any object criteria not applicable to that scope is ignored. (EX: Rules about user objects or record type objects.) Container permissions are great for setting restrictions around how a container's contents can be accessed since a deny rules ALWAYS take precedence over allow rules. It is also possible to set allow rules within container permissions.",
+      "requestors": [
+        "pcrn:12345678:*/*"
+      ],
+      "actions": [
+        "pcrn:12345678:action/*:*"
+      ],
+      "on_objects": [
+        "THIS WILL BE IGNORED SINCE IT IS A CONTAINER PERMISSION. BY DEFAULT, CONTAINER PERMISSIONS APPLY TO THE CONTAINER ITS APPLIED TO AND RECORDS WITHIN THAT CONTAINER."
+      ],
+      "decision": "deny",
+      "conditions": {
+        "not_from_countries" : ["USA"]
+      }
+    }
+  ]
+}

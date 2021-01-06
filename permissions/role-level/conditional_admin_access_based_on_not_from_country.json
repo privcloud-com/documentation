@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "comment": "This example shows how to create a permission that can be used to grant administrative access to records of the record type 'PII' in the 'SaaS-Applications' workspace with the condition that the request not originate from Iran or Iraq. In this case, this permission is allowing the user dtijerina-PIIAdmin or the application app-integration-PIIAdmin these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-PIIAdmin or the application app-integration-PIIAdmin.",
+      "requestors": [
+        "pcrn:12345678:user/dtijerina-PIIAdmin",
+        "pcrn:12345678:application/app-integration-PIIAdmin"
+      ],
+      "actions": [
+        "pcrn:12345678:action/records:*"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/workspaces:*:containers:*:records:*"
+      ],
+      "decision": "allow",
+      "conditions": {
+        "record_type" : ["PII"],
+        "not_from_country" : ["IRQ", "IRN"]
+      }
+    }
+  ]
+}
