@@ -8,10 +8,10 @@
         "pcrn:12345678:entity/application:app-integration-Q1RecordAdmin"
       ],
       "actions": [
-        "pcrn:12345678:action/users:*"
+        "pcrn:12345678:action/user:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/users:*"
+        "pcrn:12345678:object/user:*"
       ],
       "decision": "allow",
       "conditions": {}
