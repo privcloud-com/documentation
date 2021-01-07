@@ -5,7 +5,7 @@
     {
       "comment": "Deny any request to the 'NorthAmerica' workspace that is not from the US or Canada. Deny rules ALWAYS take precedence over allow rules.",
       "requestors": [
-        "pcrn:12345678:*/*"
+        "pcrn:12345678:entity/*:*"
       ],
       "actions": [
         "pcrn:12345678:action/*:*"
@@ -24,7 +24,7 @@
     {
       "comment": "Allow record read, update, delete and list requests to records tagged 'Safe' or 'P1' in the 'Product1' container in the 'NorthAmerica' workspace from the US and Canada to any user or application but only from a certain IP address, at certain times, and enforce MFA.",
       "requestors": [
-        "pcrn:12345678:*/*"
+        "pcrn:12345678:entity/*:*"
       ],
       "actions": [
         "pcrn:12345678:action/record:get",

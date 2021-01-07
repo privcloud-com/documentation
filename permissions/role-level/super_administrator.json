@@ -11,7 +11,8 @@
         "pcrn:12345678:action/*:*"
       ],
       "on_objects": [
-        "pcrn:12345678:*/*"
+        "pcrn:12345678:entity/*:*",
+        "pcrn:12345678:object/*:*"
 
       ],
       "decision": "allow",

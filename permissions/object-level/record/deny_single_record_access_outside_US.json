@@ -4,7 +4,7 @@
     {
       "comment": "This example shows how to create a record permission that can be used to deny access to the associated record from outside the USA.",
       "requestors": [
-        "pcrn:12345678:*/*"
+        "pcrn:12345678:entity/*:*"
       ],
       "actions": [
         "pcrn:12345678:action/record:*"
