@@ -2,9 +2,9 @@
   "version": 1,
   "rules": [
     {
-      "comment": "This example shows how to create a container permission that can be used to grant the user 'dtijerina-containerpolicyexample' administrative container rights and get/list functionality for records of the record_type 'PII' or 'PHI' within the container it is applied to. Container permissions apply to the container itself and any associated records within that container so any object criteria not applicable to that scope is ignored. (EX: Rules about user objects or record type objects.) Container permissions are great for setting restrictions around how a container's contents can be accessed since a deny rules ALWAYS take precedence over allow rules. It is also possible to set allow rules within container permissions.",
+      "comment": "This example shows how to create a container permission that can be used to grant the user 'dtijerina-containerpolicyexample@privcloud.com' administrative container rights and get/list functionality for records of the record_type 'PII' or 'PHI' within the container it is applied to. Container permissions apply to the container itself and any associated records within that container so any object criteria not applicable to that scope is ignored. (EX: Rules about user objects or record type objects.) Container permissions are great for setting restrictions around how a container's contents can be accessed since a deny rules ALWAYS take precedence over allow rules. It is also possible to set allow rules within container permissions.",
       "requestors": [
-        "pcrn:12345678:user/dtijerina-containerpolicyexample"
+        "pcrn:12345678:user/dtijerina-containerpolicyexample@privcloud.com"
       ],
       "actions": [
         "pcrn:12345678:action/containers:*",

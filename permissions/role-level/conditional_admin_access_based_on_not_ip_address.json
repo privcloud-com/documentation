@@ -2,9 +2,9 @@
   "version": 1,
   "rules": [
     {
-      "comment": "This example shows how to create a permission that can be used to grant super-administrative privileges over the entire instance with the condition that the request not come from within a range of IP addresses. In this case, this permission is allowing the user dtijerina-superadministrator or the application app-integration-superadministrator these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-superadministrator or the application app-integration-superadministrator.",
+      "comment": "This example shows how to create a permission that can be used to grant super-administrative privileges over the entire instance with the condition that the request not come from within a range of IP addresses. In this case, this permission is allowing the user dtijerina-superadministrator@privcloud.com or the application app-integration-superadministrator these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-superadministrator@privcloud.com or the application app-integration-superadministrator.",
       "requestors": [
-        "pcrn:12345678:entity/user:dtijerina-superadministrator",
+        "pcrn:12345678:entity/user:dtijerina-superadministrator@privcloud.com",
         "pcrn:12345678:entity/application:app-integration-superadministrator"
       ],
       "actions": [

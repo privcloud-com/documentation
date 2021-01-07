@@ -2,9 +2,9 @@
   "version": 1,
   "rules": [
     {
-      "comment": "This example shows how to create a permission that can be used to grant administrative access to records tagged 'Q1Record' in containers that are tagged 'Q1Record' in any workspace or container with the condition that the request occur between 11:00 AM UTC and 2:00 PM UTC on Monday, Wednesday, or Friday. In this case, this permission is allowing the user dtijerina-Q1RecordAdmin or the application app-integration-Q1RecordAdmin these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-Q1RecordAdmin or the application app-integration-Q1RecordAdmin.",
+      "comment": "This example shows how to create a permission that can be used to grant administrative access to records tagged 'Q1Record' in containers that are tagged 'Q1Record' in any workspace or container with the condition that the request occur between 11:00 AM UTC and 2:00 PM UTC on Monday, Wednesday, or Friday. In this case, this permission is allowing the user dtijerina-Q1RecordAdmin@privcloud.com or the application app-integration-Q1RecordAdmin these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-Q1RecordAdmin@privcloud.com or the application app-integration-Q1RecordAdmin.",
       "requestors": [
-        "pcrn:12345678:user/dtijerina-Q1RecordAdmin",
+        "pcrn:12345678:user/dtijerina-Q1RecordAdmin@privcloud.com",
         "pcrn:12345678:application/app-integration-Q1RecordAdmin"
       ],
       "actions": [
