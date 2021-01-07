@@ -9,7 +9,7 @@
       "actions": [
         "pcrn:12345678:action/record:get",
         "pcrn:12345678:action/record:get_with_anonymize"
-      ],co
+      ],
       "on_objects": [
         "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1"
       ],
