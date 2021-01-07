@@ -2,7 +2,7 @@
   "version": 1,
   "rules": [
     {
-      "comment": "This example shows how to create a permission that can be used to grant super-administrative privileges over the entire instance with the condition that the request come from within a range of IP address CIDRs and have multi-factor authentication performed. In this case, this permission is allowing the user dtijerina-superadministrator or the application app-integration-superadministrator super admin privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-superadministrator or the application app-integration-superadministrator.",
+      "comment": "This example shows how to create a permission that can be used to grant super-administrative privileges over the entire instance with the condition that the request come from within a range of IP address CIDRs and have multi-factor authentication performed. In this case, this permission is allowing the user dtijerina-superadministrator or the application app-integration-superadministrator these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-superadministrator or the application app-integration-superadministrator.",
       "requestors": [
         "pcrn:12345678:entity/user:dtijerina-superadministrator",
         "pcrn:12345678:entity/application:app-integration-superadministrator"

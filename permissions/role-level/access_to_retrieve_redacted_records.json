@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "comment": "This example shows how to create a permission that can be used to retrieve (in encrypted or redacted) form, the records tagged as 'PII' within the Product1 container in the SaaS-Applications workspace. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-recordretriever or the application app-integration-recordretriever.",
+      "requestors": [
+        "pcrn:12345678:user/dtijerina-recordretriever"
+      ],
+      "actions": [
+        "pcrn:12345678:action/records:get",
+        "pcrn:12345678:action/records:get_with_redact"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1"
+      ],
+      "decision": "allow",
+      "conditions": {
+        "record_type" : ["PII"]
+      }
+    }
+  ]
+}

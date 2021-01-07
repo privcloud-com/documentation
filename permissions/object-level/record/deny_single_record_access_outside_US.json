@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "comment": "This example shows how to create a record permission that can be used to deny access to the associated record from outside the USA.",
+      "requestors": [
+        "pcrn:12345678:*/*"
+      ],
+      "actions": [
+        "pcrn:12345678:action/records:*"
+      ],
+      "on_objects": [
+        "THIS WILL BE IGNORED SINCE IT IS A RECORD PERMISSION. BY DEFAULT, RECORD PERMISSIONS ONLY APPLY TO THE RECORDS THEY ARE ATTACHED TO."
+      ],
+      "decision": "deny",
+      "conditions": {
+        "not_from_countries": ["USA"]
+      }
+    }
+  ]
+}

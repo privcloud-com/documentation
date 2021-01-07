@@ -2,7 +2,7 @@
   "version": 1,
   "rules": [
     {
-      "comment": "This example shows how to create a permission that can be used to grant administrative privileges over the records with the UUIDs listed below in the 'Product1' container in the 'SaaS-Applications' workspace. In this case, this permission is allowing the user dtijerina-recordadministrator or the application app-integration-recordadministrator super admin privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-recordadministrator or the application app-integration-recordadministrator.",
+      "comment": "This example shows how to create a permission that can be used to grant administrative privileges over the records with the UUIDs listed below in the 'Product1' container in the 'SaaS-Applications' workspace. In this case, this permission is allowing the user dtijerina-recordadministrator or the application app-integration-recordadministrator these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-recordadministrator or the application app-integration-recordadministrator.",
       "requestors": [
         "pcrn:12345678:user/dtijerina-recordadministrator",
         "pcrn:12345678:application/app-integration-recordadministrator"
