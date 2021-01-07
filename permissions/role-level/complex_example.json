@@ -62,9 +62,9 @@
       }
     },
     {
-      "comment": "Workspace and container creation along with user creation and updating (but not deletion) to 'somewhat-admin-user'",
+      "comment": "Workspace and container creation along with user creation and updating (but not deletion) to 'somewhat-admin-user@privcloud.com'",
       "requestors": [
-        "pcrn:12345678:entity/user:somewhat-admin-user"
+        "pcrn:12345678:entity/user:somewhat-admin-user@privcloud.com"
       ],
       "actions": [
         "pcrn:12345678:action/workspace:create",
