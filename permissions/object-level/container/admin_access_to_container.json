@@ -7,9 +7,9 @@
         "pcrn:12345678:entity/user:dtijerina-containerpolicyexample@privcloud.com"
       ],
       "actions": [
-        "pcrn:12345678:action/containers:*",
-        "pcrn:12345678:action/records:get",
-        "pcrn:12345678:action/records:list"
+        "pcrn:12345678:action/container:*",
+        "pcrn:12345678:action/record:get",
+        "pcrn:12345678:action/record:list"
       ],
       "on_objects": [
         "THIS WILL BE IGNORED SINCE IT IS A CONTAINER PERMISSION. BY DEFAULT, CONTAINER PERMISSIONS APPLY TO THE CONTAINER ITS APPLIED TO AND RECORDS WITHIN THAT CONTAINER."

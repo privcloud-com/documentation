@@ -8,12 +8,12 @@
         "pcrn:12345678:entity/application:app-integration-recordadministrator"
       ],
       "actions": [
-        "pcrn:12345678:action/records:*"
+        "pcrn:12345678:action/record:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:1ea0a9a504b249f698c0a91df6b8bbac",
-        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:d4e4dd1a91f04181bf41b5aef5e1a8e0",
-        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:a316b61da9c6483480a6075c623f46e5"
+        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:1ea0a9a504b249f698c0a91df6b8bbac",
+        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:d4e4dd1a91f04181bf41b5aef5e1a8e0",
+        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:a316b61da9c6483480a6075c623f46e5"
       ],
       "decision": "allow",
       "conditions": {}

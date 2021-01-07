@@ -8,11 +8,11 @@
         "pcrn:12345678:entity/application:app-integration-containeradministrator"
       ],
       "actions": [
-        "pcrn:12345678:action/containers:*",
-        "pcrn:12345678:action/records:*"
+        "pcrn:12345678:action/container:*",
+        "pcrn:12345678:action/record:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:*"
+        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:*"
       ],
       "decision": "allow",
       "conditions": {}

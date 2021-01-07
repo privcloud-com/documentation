@@ -7,11 +7,11 @@
         "pcrn:12345678:entity/user:dtijerina-recordowner@privcloud.com"
       ],
       "actions": [
-        "pcrn:12345678:action/records:get",
-        "pcrn:12345678:action/records:get_with_redact",
-        "pcrn:12345678:action/records:get_with_anonymize",
-        "pcrn:12345678:action/records:get_with_decrypt",
-        "pcrn:12345678:action/records:update"
+        "pcrn:12345678:action/record:get",
+        "pcrn:12345678:action/record:get_with_redact",
+        "pcrn:12345678:action/record:get_with_anonymize",
+        "pcrn:12345678:action/record:get_with_decrypt",
+        "pcrn:12345678:action/record:update"
       ],
       "on_objects": [
         "THIS WILL BE IGNORED SINCE IT IS A RECORD PERMISSION. BY DEFAULT, RECORD PERMISSIONS ONLY APPLY TO THE RECORDS THEY ARE ATTACHED TO."

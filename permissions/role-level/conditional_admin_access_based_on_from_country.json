@@ -8,10 +8,10 @@
         "pcrn:12345678:entity/application:app-integration-PIIAdmin"
       ],
       "actions": [
-        "pcrn:12345678:action/records:*"
+        "pcrn:12345678:action/record:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:*:containers:*:records:*"
+        "pcrn:12345678:object/workspace:*:container:*:record:*"
       ],
       "decision": "allow",
       "conditions": {
