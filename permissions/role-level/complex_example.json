@@ -64,7 +64,7 @@
     {
       "comment": "Workspace and container creation along with user creation and updating (but not deletion) to 'somewhat-admin-user'",
       "requestors": [
-        "pcrn:12345678:user/somewhat-admin-user"
+        "pcrn:12345678:entity/user:somewhat-admin-user"
       ],
       "actions": [
         "pcrn:12345678:action/workspaces:create",

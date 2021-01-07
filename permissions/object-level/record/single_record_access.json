@@ -4,7 +4,7 @@
     {
       "comment": "This example shows how to create a record permission that can be used to grant the user 'dtijerina-record@privcloud.com' all rights to a specific record when authenticated with MFA and the request originating from certain IP ranges.",
       "requestors": [
-        "pcrn:12345678:user/dtijerina-recordowner@privcloud.com"
+        "pcrn:12345678:entity/user:dtijerina-recordowner@privcloud.com"
       ],
       "actions": [
         "pcrn:12345678:action/records:get",

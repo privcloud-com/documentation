@@ -4,8 +4,8 @@
     {
       "comment": "This example shows how to create a permission that can be used to grant administrative privileges over the 'SaaS-Applications' workspace. In this case, this permission is allowing the user dtijerina-workspaceadministrator@privcloud.com or the application app-integration-workspaceadministrator these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-workspaceadministrator@privcloud.com or the application app-integration-workspaceadministrator.",
       "requestors": [
-        "pcrn:12345678:user/dtijerina-workspaceadministrator@privcloud.com",
-        "pcrn:12345678:application/app-integration-workspaceadministrator"
+        "pcrn:12345678:entity/user:dtijerina-workspaceadministrator@privcloud.com",
+        "pcrn:12345678:entity/application:app-integration-workspaceadministrator"
       ],
       "actions": [
         "pcrn:12345678:action/containers:*",
