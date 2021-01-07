@@ -8,7 +8,7 @@
         "pcrn:12345678:entity/application:app-integration-superadministrator"
       ],
       "actions": [
-        "pcrn:12345678:action/*"
+        "pcrn:12345678:action/*:*"
       ],
       "on_objects": [
         "pcrn:12345678:*/*"
