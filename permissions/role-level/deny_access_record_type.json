@@ -15,7 +15,7 @@
       ],
       "decision": "deny",
       "conditions": {
-        "record_tag": [
+        "record_tags": [
           "Q1Record"
         ]
       }

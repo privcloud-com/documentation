@@ -15,7 +15,7 @@
       ],
       "decision": "allow",
       "conditions": {
-        "record_tag": [
+        "record_tags": [
           "Q1Record"
         ],
         "days_of_the_week": [

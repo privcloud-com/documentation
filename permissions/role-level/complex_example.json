@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "comment": "This is a complex example that shows how to use all components of the permissions model to accomplish a business, security, and compliance objectives.",
+  "comment": "This is a complex example that shows how to use all components of the permissions model to accomplish a business, security, and compliance objectives. The country codes are ISO alpha-2 codes that can be found here: https://www.nationsonline.org/oneworld/country_code_list.htm",
   "rules": [
     {
       "comment": "Deny any request to the 'NorthAmerica' workspace that is not from the US or Canada. Deny rules ALWAYS take precedence over allow rules.",
@@ -16,8 +16,8 @@
       "decision": "deny",
       "conditions": {
         "not_from_countries": [
-          "USA",
-          "CAN"
+          "US",
+          "CA"
         ]
       }
     },
@@ -37,13 +37,13 @@
       ],
       "decision": "allow",
       "conditions": {
-        "record_tag": [
+        "record_tags": [
           "Safe",
           "P1"
         ],
         "from_countries": [
-          "USA",
-          "CAN"
+          "US",
+          "CA"
         ],
         "from_IP_cidrs": [
           "12.34.8.0/24",

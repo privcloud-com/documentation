@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["accountNumber","firstName","lastName","address","creditCard"],
   "properties": {
-    "acccountNumber": {
+    "accountNumber": {
       "type": "string",
       "description": "The person's first name.",
       "pattern": "^[0-9]{8}$",
@@ -32,9 +32,9 @@
           "type": "string",
           "description": "The city of the address."
         },
-        "state": {
+        "country": {
           "type": "string",
-          "description": "The state of the address."
+          "description": "The country of the address."
         },
         "zip": {
           "type": "string",
@@ -78,8 +78,7 @@
         },
         "isDefault": {
           "type": "boolean",
-          "description": "Whether the credit card is the default to use",
-          "pattern": "^[0-9]{5}"
+          "description": "Whether the credit card is the default to use"
         }
       }
     }

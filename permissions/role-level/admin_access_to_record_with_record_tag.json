@@ -15,10 +15,10 @@
       ],
       "decision": "allow",
       "conditions": {
-        "record_tag": [
+        "record_tags": [
           "Q1Record"
         ],
-        "container_tag" : [
+        "container_tags" : [
           "Q1Records"
         ]
       }

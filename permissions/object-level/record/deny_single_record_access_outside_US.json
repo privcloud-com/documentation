@@ -14,7 +14,7 @@
       ],
       "decision": "deny",
       "conditions": {
-        "not_from_countries": ["USA"]
+        "not_from_countries": ["US"]
       }
     }
   ]

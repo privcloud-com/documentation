@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["accountNumber","firstName","lastName","address","creditCards"],
   "properties": {
-    "acccountNumber": {
+    "accountNumber": {
       "type": "string",
       "description": "The person's first name.",
       "pattern": "^[0-9]{8}$",

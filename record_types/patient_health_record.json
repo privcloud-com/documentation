@@ -95,9 +95,9 @@
       "description": "The medication object",
       "required": ["name", "startDate", "refills"],
       "properties": {
-        "name": {
+        "medication_name": {
           "type": "string",
-          "description": "The medication name",
+          "description": "The medication name"
         },
         "startDate": {
           "type": "string",
