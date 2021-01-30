@@ -4,16 +4,16 @@
     {
       "comment": "This example shows how to create a permission that can be used to grant administrative privileges over the records with the UUIDs listed below in the 'Product1' container in the 'SaaS-Applications' workspace. In this case, this permission is allowing the user dtijerina-recordadministrator@privcloud.com or the application app-integration-recordadministrator these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-recordadministrator@privcloud.com or the application app-integration-recordadministrator.",
       "requestors": [
-        "pcrn:12345678:entity/user:dtijerina-recordadministrator@privcloud.com",
-        "pcrn:12345678:entity/application:app-integration-recordadministrator"
+        "pcrn:12345678:entity/users:dtijerina-recordadministrator@privcloud.com",
+        "pcrn:12345678:entity/applications:app-integration-recordadministrator"
       ],
       "actions": [
-        "pcrn:12345678:action/record:*"
+        "pcrn:12345678:action/records:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:1ea0a9a504b249f698c0a91df6b8bbac",
-        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:d4e4dd1a91f04181bf41b5aef5e1a8e0",
-        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:a316b61da9c6483480a6075c623f46e5"
+        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:1ea0a9a504b249f698c0a91df6b8bbac",
+        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:d4e4dd1a91f04181bf41b5aef5e1a8e0",
+        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:a316b61da9c6483480a6075c623f46e5"
       ],
       "decision": "allow",
       "conditions": {}

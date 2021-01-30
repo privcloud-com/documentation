@@ -4,14 +4,14 @@
     {
       "comment": "This example shows how to create a permission that can be used to retrieve (in encrypted or anonymized) form, the records tagged as 'PII' within the Product1 container in the SaaS-Applications workspace. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-anonymousrecordretriever@privcloud.com.",
       "requestors": [
-        "pcrn:12345678:entity/user:dtijerina-anonymousrecordretriever@privcloud.com"
+        "pcrn:12345678:entity/users:dtijerina-anonymousrecordretriever@privcloud.com"
       ],
       "actions": [
-        "pcrn:12345678:action/record:get",
-        "pcrn:12345678:action/record:get_with_anonymize"
+        "pcrn:12345678:action/records:get",
+        "pcrn:12345678:action/records:get_with_anonymize"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1"
+        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1"
       ],
       "decision": "allow",
       "conditions": {

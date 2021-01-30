@@ -4,14 +4,14 @@
     {
       "comment": "This example shows how to create a permission that can be used to deny any access to records tagged 'Q1Record' in any container or workspace. Deny permissions ALWAYS take precedence over allow permissions. In this case, this permission is allowing the user dtijerina-cannotaccessQ1Records@privcloud.com or the application app-integration-cannotaccessQ1Records these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-cannotaccessQ1Records@privcloud.com or the application app-integration-cannotaccessQ1Records.",
       "requestors": [
-        "pcrn:12345678:entity/user:dtijerina-cannotaccessQ1Records@privcloud.com",
-        "pcrn:12345678:entity/application:app-integration-cannotaccessQ1Records"
+        "pcrn:12345678:entity/users:dtijerina-cannotaccessQ1Records@privcloud.com",
+        "pcrn:12345678:entity/applications:app-integration-cannotaccessQ1Records"
       ],
       "actions": [
-        "pcrn:12345678:action/record:*"
+        "pcrn:12345678:action/records:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspace:*:container:*:record:*"
+        "pcrn:12345678:object/workspaces:*:containers:*:records:*"
       ],
       "decision": "deny",
       "conditions": {
