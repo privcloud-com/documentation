@@ -5,13 +5,14 @@ container. If you attempt to create a record or modify an existing record with a
 the system will deny it. The format used to define record types is [JSON Schema](https://json-schema.org/). Examples of record types 
 can be found in the [record types](examples/record_types) directory.
 
-An important consideration is which fields in your record types is which fields are encrypted. You *cannot* search against 
+An important consideration is which properties in your record types is which properties are encrypted. You *cannot* search against 
 record type values that are encrypted. You *can* search against record type values that are not encrypted.
 
 Below are a few scenarios describing when value encryption is enforced and when it isn't. In this example, you will not be
-able to search against the "firstName" field but you will be able to search against the "jobRole" field. 
+able to search against the "firstName" property but you will be able to search against the "jobRole" property. 
 
-Note: record keys are *never* encrypted in PrivCloud, do not store sensitive data in the keys of your record types!
+**Important note**: record keys are *never* encrypted in PrivCloud, do not store sensitive data in the keys of your record types!
+**Another importany note**: if a property is explicitly *not* encrypted, then it is also not able to be anonymized or redacted, the full record value will be returned regardless of what options 
 
 ```
 {

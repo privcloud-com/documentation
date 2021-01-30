@@ -2,7 +2,7 @@
 Actions correspond to API calls in PrivCloud. The mapping of actions to HTTP Method and URI is defined below. 
 
 | Action | HTTP Method + URI | Description | 
-|:-------------:|:-------------:| :-------------:| 
+|:-------------:|:-------------:| :-------------| 
 | audit_log:list | GET /api/audit_log | Get a list of audit logs |
 | audit_log:get | GET /api/audit_log/{id} | Get an audit log based on the audit log's ID |
 | user:list | GET /api/user | Get a list of users |

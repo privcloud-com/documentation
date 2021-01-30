@@ -15,7 +15,7 @@ that PrivCloud can be accessed. Invalid entries will be ignored but both start a
 are UTC so you must convert your timezone first.
 
 Example: Only allow access to PrivCloud between 10:00:00 AM UTC and 5:00:00 PM UTC.
-```
+```json
 {
 	"between_times": {
 		"start_time": "10:00:00",
@@ -29,7 +29,7 @@ in combination with the "between_times" condition to define the windows of time 
 Invalid entries will be ignored.
 
 Example: Only allow access to PrivCloud on monday, wednesday, and friday.
-```
+```json
 {
   "days_of_the_week": ["monday","wednesday","friday"]
 }
@@ -41,7 +41,7 @@ This condition is great for ensuring that requests come from a certain set of ma
 use of an allow-list. Invalid entries will be ignored.
 
 Example: Only allow access to PrivCloud when the requests originate from 213.23.43.45 or an IP within the CIDRs 1.1.1.0/24 and 245.43.13.0/28.  
-```
+```json
 {
   "from_IP_cidrs": ["1.1.1.0/24", "213.23.43.45", "245.43.13.0/28"]
 }
@@ -53,7 +53,7 @@ This condition is great for ensuring that requests do not come from a certain se
 use of a block-list. Invalid entries will be ignored.
 
 Example: Do not allow access to PrivCloud when the requests originate from 8.8.8.8 or an IP within the CIDR 9.9.9.0/24.
-```
+```json
 {
   "not_from_IP_cidrs": ["8.8.8.8", "9.9.9.0/24"]
 }
@@ -67,7 +67,7 @@ allow list. For example, you may have regulatory restrictions or company policie
 ensure that policy is followed.
 
 Example: Only allow access to PrivCloud when the request originates from the United Kingdom, Ireland, or Germany. 
-```
+```json
 {
   "from_countries": ["UK", "IE", "DE"]
 }
@@ -81,7 +81,7 @@ this list. This is great to use when you want to deny access to data or all of P
 ensure that policy is followed.
 
 Example: Do not allow access to PrivCloud when the request originates from Iraq, Iran, Russia, or China. 
-```
+```json
 {
   "not_from_countries": ["IQ", "IR", "RU", "CN"]
 }
@@ -118,7 +118,7 @@ role or object permissions. For example, if your COO needs to see both employee 
 grant access to these record types through a role permission across all workspaces and containers in PrivCloud.
 
 Example: Allow or deny access to records of the type "employee records" and "customer leads"
-```
+```json
 {
   "record_type": ["employee records","customer leads"]
 }
@@ -129,7 +129,7 @@ role or object permissions. For example, if your HR administrator needs access t
 grant access to these records through a role permission across all workspaces and containers in PrivCloud.
 
 Example: Allow or deny access to records tagged "employee info"
-```
+```json
 {
   "record_tag": ["employee info"]
 }
@@ -140,7 +140,7 @@ role or object permissions. For example, if your infrastructure team needs acces
 grant access to these containers through a role permission across all workspaces in PrivCloud.
 
 Example: Allow or deny access to containers tagged "SaaS"
-```
+```json
 {
   "container_tag": ["SaaS"]
 }

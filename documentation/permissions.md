@@ -12,15 +12,15 @@ Role-level permissions are attached to roles in the system and define what a use
 permissions are defined on the container or record itself and can be used to define "hard and fast" rules about how the 
 objects are accessed. For example, if data in a container or an individual record must not be accessed from outside of Canada, you
 can define a deny will on the container or object to disallow it if the "not_from_countries" condition is not met. 
-Permissions are defined as JSON  objects that have two top-level required fields and an optional comment 
-field. These field definitions are below.
+Permissions are defined as JSON  objects that have two top-level required properties and an optional comment 
+property. These property definitions are below.
 
   * version (required) : the is the version of the JSON definition structure, currently only version 1 is supported
   * rules (required) : a list of rules 
   * comment (optional) : an optional comment for the rule
 
 #### Example rule
-```
+```json
 {
   "version": 1,
   "rules": [
@@ -73,8 +73,8 @@ pcrn:12345678:object/workspaces:SaaS*App:containers:Product1:records:82bf08a66f3
 ```
 
 #### Rules
-Rules are a list of rules that define what is allowed or denied. They consist of four top-level required fields, an optional 
-conditions field, and an optional comment field.
+Rules are a list of rules that define what is allowed or denied. They consist of four top-level required properties, an optional 
+conditions property, and an optional comment property.
 
   * requestors (required) : a list of [users](../README.md#users) or [applications](../README.md#applications) in [PCRN format](#pcrn-format) that the rule applies to
   * actions (required) : a list of [actions](actions.md) in scope of the rule
