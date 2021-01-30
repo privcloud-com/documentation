@@ -14,7 +14,7 @@ able to search against the "firstName" property but you will be able to search a
 **Important note**: record keys are *never* encrypted in PrivCloud, do not store sensitive data in the keys of your record types!
 **Another importany note**: if a property is explicitly *not* encrypted, then it is also not able to be anonymized or redacted, the full record value will be returned regardless of what options 
 
-```
+```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Person",
