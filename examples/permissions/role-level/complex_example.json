@@ -11,7 +11,7 @@
         "pcrn:12345678:action/*:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:NorthAmerica:containers:*:records:*"
+        "pcrn:12345678:object/workspaces:NorthAmerica:container:*:record:*"
       ],
       "decision": "deny",
       "conditions": {
@@ -27,13 +27,13 @@
         "pcrn:12345678:entity/*:*"
       ],
       "actions": [
-        "pcrn:12345678:action/records:get",
-        "pcrn:12345678:action/records:list",
-        "pcrn:12345678:action/records:update",
-        "pcrn:12345678:action/records:delete"
+        "pcrn:12345678:action/record:get",
+        "pcrn:12345678:action/record:list",
+        "pcrn:12345678:action/record:update",
+        "pcrn:12345678:action/record:delete"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:NorthAmerica:containers:*:records:*"
+        "pcrn:12345678:object/workspace:NorthAmerica:container:*:record:*"
       ],
       "decision": "allow",
       "conditions": {
@@ -65,13 +65,13 @@
     {
       "comment": "Workspace and container creation along with user creation and updating (but not deletion) to 'somewhat-admin-user@privcloud.com'",
       "requestors": [
-        "pcrn:12345678:entity/users:somewhat-admin-user@privcloud.com"
+        "pcrn:12345678:entity/user:somewhat-admin-user@privcloud.com"
       ],
       "actions": [
-        "pcrn:12345678:action/workspaces:create",
-        "pcrn:12345678:action/containers:create",
-        "pcrn:12345678:action/users:create",
-        "pcrn:12345678:action/users:update"
+        "pcrn:12345678:action/workspace:create",
+        "pcrn:12345678:action/container:create",
+        "pcrn:12345678:action/user:create",
+        "pcrn:12345678:action/user:update"
       ],
       "on_objects": [
         "pcrn:12345678:object/*:*"

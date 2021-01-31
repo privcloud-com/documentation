@@ -27,8 +27,8 @@ property. These property definitions are below.
     {
       "comment": "This example shows how to create a permission that can be used to grant super-administrative privileges over the entire instance. In this case, this permission is allowing the user dtijerina-superadministrator@privcloud.com or the application app-integration-superadministrator these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-superadministrator@privcloud.com or the application app-integration-superadministrator.",
       "requestors": [
-        "pcrn:12345678:entity/users:dtijerina-superadministrator@privcloud.com",
-        "pcrn:12345678:entity/applications:app-integration-superadministrator"
+        "pcrn:12345678:entity/user:dtijerina-superadministrator@privcloud.com",
+        "pcrn:12345678:entity/application:app-integration-superadministrator"
       ],
       "actions": [
         "pcrn:12345678:action/*:*"
@@ -60,16 +60,16 @@ text before, between, or after an object name.
 
 Good use of wildcards
 ```
-pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:*
+pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:*
 ```
 
 Bad used of wildcards
 ```
-pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1:records:82bf08a66f3*1e04f47c4a5d35d
+pcrn:12345678:object/workspace:SaaS-Applications:container:Product1:record:82bf08a66f3*1e04f47c4a5d35d
 
-pcrn:12345678:object/workspaces:SaaS-Applications:containers:*SaaSProduct:records:82bf08a66f344741b1e04f47c4a5d35d
+pcrn:12345678:object/workspace:SaaS-Applications:container:*SaaSProduct:record:82bf08a66f344741b1e04f47c4a5d35d
 
-pcrn:12345678:object/workspaces:SaaS*App:containers:Product1:records:82bf08a66f344741b1e04f47c4a5d35d
+pcrn:12345678:object/workspace:SaaS*App:container:Product1:record:82bf08a66f344741b1e04f47c4a5d35d
 ```
 
 #### Rules
@@ -96,7 +96,7 @@ prcn:<privcloud_account_id>:<namespace>/<object_type>:<object>
 ```
 
 ```
-pcrn:12345678:entity/users:dtijerina-superadministrator@privcloud.com
+pcrn:12345678:entity/user:dtijerina-superadministrator@privcloud.com
 ```
 
  * privcloud_account_id - your PrivCloud account ID
@@ -104,6 +104,7 @@ pcrn:12345678:entity/users:dtijerina-superadministrator@privcloud.com
    * entity - a user or application
    * action - an API action
    * object - data or metadata in PrivCloud
+   * configuration - 
  * object_type - the object type for the object with the options defined below
    * users - used to specify a user 
    * applications - used to specify an application

@@ -1,5 +1,7 @@
 ## Actions
-Actions correspond to API calls in PrivCloud. The mapping of actions to HTTP Method and URI is defined below. 
+Actions correspond to API calls in PrivCloud. The mapping of actions to HTTP Method and URI is defined below. This is a high
+level list of endpoints available in PrivCloud. For a full and always up-to-date list of endpoints, visit our swagger UI
+ by pointing your browser at the /api url in your instance of PrivCloud.
 
 | Action | HTTP Method + URI | Description | 
 |:-------------:|:-------------:| :-------------| 
@@ -47,6 +49,7 @@ Actions correspond to API calls in PrivCloud. The mapping of actions to HTTP Met
 | container:delete | DELETE /api/container/{guid} | Delete a container based on containers' GUID |
 | container:update | PATCH /api/container/{guid} | Update a container based on the containers' GUID |
 | container:create | POST /api/container | Create a container |
+| container:update_key | PATCH /api/container/{guid}/update_key | Update the encryption key for your container | 
 | container_tag:create | POST /api/container_tag | Create a container tag |
 | container_tag:delete | DELETE /api/container_tag/{container_guid}/{tag} | Delete a container tag |
 | record_type:list | GET /api/record_type | Get a list of record types |

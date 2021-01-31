@@ -4,14 +4,14 @@
     {
       "comment": "This example shows how to create a permission that can be used to grant administrative access to records of the record type 'PII' in the 'SaaS-Applications' workspace with the condition that the request not originate from Iran or Iraq. In this case, this permission is allowing the user dtijerina-PIIAdmin@privcloud.com or the application app-integration-PIIAdmin these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-PIIAdmin@privcloud.com or the application app-integration-PIIAdmin. The country codes are ISO alpha-2 codes that can be found here: https://www.nationsonline.org/oneworld/country_code_list.htm",
       "requestors": [
-        "pcrn:12345678:entity/users:dtijerina-PIIAdmin@privcloud.com",
-        "pcrn:12345678:entity/applications:app-integration-PIIAdmin"
+        "pcrn:12345678:entity/user:dtijerina-PIIAdmin@privcloud.com",
+        "pcrn:12345678:entity/application:app-integration-PIIAdmin"
       ],
       "actions": [
-        "pcrn:12345678:action/records:*"
+        "pcrn:12345678:action/record:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:*:containers:*:records:*"
+        "pcrn:12345678:object/workspace:*:container:*:record:*"
       ],
       "decision": "allow",
       "conditions": {

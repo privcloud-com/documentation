@@ -4,14 +4,14 @@
     {
       "comment": "This example shows how to create a permission that can be used to retrieve (in encrypted or decrypted) form, the records tagged as 'PII' within the Product1 container in the SaaS-Applications workspace. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-recordretriever@privcloud.com or the application app-integration-recordretriever.",
       "requestors": [
-        "pcrn:12345678:entity/users:dtijerina-recorddecrypt@privcloud.com"
+        "pcrn:12345678:entity/user:dtijerina-recorddecrypt@privcloud.com"
       ],
       "actions": [
-        "pcrn:12345678:action/records:get",
-        "pcrn:12345678:action/records:get_with_decrypt"
+        "pcrn:12345678:action/record:get",
+        "pcrn:12345678:action/record:get_with_decrypt"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:SaaS-Applications:containers:Product1"
+        "pcrn:12345678:object/workspace:SaaS-Application:container:Product1"
       ],
       "decision": "allow",
       "conditions": {

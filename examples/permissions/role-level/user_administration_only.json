@@ -4,14 +4,14 @@
     {
       "comment": "This example shows how to create a permission that can be used to grant administrative access to records tagged 'Q1Record' in containers that are tagged 'Q1Record' in any workspace or container. In this case, this permission is allowing the user dtijerina-Q1RecordAdmin@privcloud.com or the application app-integration-Q1RecordAdmin these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-Q1RecordAdmin@privcloud.com or the application app-integration-Q1RecordAdmin.",
       "requestors": [
-        "pcrn:12345678:entity/users:dtijerina-Q1RecordAdmin@privcloud.com",
-        "pcrn:12345678:entity/applications:app-integration-Q1RecordAdmin"
+        "pcrn:12345678:entity/user:dtijerina-Q1RecordAdmin@privcloud.com",
+        "pcrn:12345678:entity/application:app-integration-Q1RecordAdmin"
       ],
       "actions": [
-        "pcrn:12345678:action/users:*"
+        "pcrn:12345678:action/user:*"
       ],
       "on_objects": [
-        "pcrn:12345678:entity/users:*"
+        "pcrn:12345678:entity/user:*"
       ],
       "decision": "allow",
       "conditions": {}

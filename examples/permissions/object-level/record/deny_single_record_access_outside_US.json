@@ -7,7 +7,7 @@
         "pcrn:12345678:entity/*:*"
       ],
       "actions": [
-        "pcrn:12345678:action/records:*"
+        "pcrn:12345678:action/record:*"
       ],
       "on_objects": [
         "THIS WILL BE IGNORED SINCE IT IS A RECORD PERMISSION. BY DEFAULT, RECORD PERMISSIONS ONLY APPLY TO THE RECORDS THEY ARE ATTACHED TO."
