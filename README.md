@@ -1,4 +1,4 @@
-#PrivCloud 
+# PrivCloud 
 PrivCloud is a secure, high-performing, cloud data-layer for storing sensitive, private information and records. Our platform is designed 
 for you to securely store, encrypt, access, process, and grant access to semi-structured sensitive data. We do this by tokenizing your 
 data and making it available via our easy-to-use API, very similar to how Stripe manages credit card processing. Once in 
