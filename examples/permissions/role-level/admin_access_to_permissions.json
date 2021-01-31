@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "comment": "This example shows how to create permissions admin. In this case, this permission is allowing the user dtijerina-permissionadmin@privcloud.com these privileges. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-permissionadmin@privcloud.com.",
+      "requestors": [
+        "pcrn:12345678:entity/user:dtijerina-permissionadmin@privcloud.com"
+      ],
+      "actions": [
+        "pcrn:12345678:action/role_permission:*",
+        "pcrn:12345678:action/container_permission:*",
+        "pcrn:12345678:action/record_permission:*"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/role_permission:*",
+        "pcrn:12345678:object/container_permission:*",
+        "pcrn:12345678:object/record_permission:*"
+      ],
+      "decision": "allow",
+      "conditions": {}
+    }
+  ]
+}

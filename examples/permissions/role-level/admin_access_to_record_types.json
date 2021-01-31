@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "comment": "This example shows how to create a permission that can be used to grant administrative access to record types. In this case, this permission is allowing the user dtijerina-RecordTypeAdmin@privcloud.com. Once this permissions is created, it needs to be assigned to a role and then the role granted to dtijerina-RecordTypeAdmin@privcloud.com.",
+      "requestors": [
+        "pcrn:12345678:entity/user:dtijerina-RecordTypeAdmin@privcloud.com"
+      ],
+      "actions": [
+        "pcrn:12345678:action/record_type:*"
+      ],
+      "on_objects": [
+        "pcrn:12345678:object/record_type:*"
+      ],
+      "decision": "allow"
+    }
+  ]
+}

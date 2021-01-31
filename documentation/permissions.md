@@ -103,19 +103,29 @@ pcrn:12345678:entity/user:dtijerina-superadministrator@privcloud.com
  * namespace - the namespace of the object with the options defined below
    * entity - a user or application
    * action - an API action
-   * object - data or metadata in PrivCloud
-   * configuration - 
+   * object - data, metadata, or configuration in PrivCloud
  * object_type - the object type for the object with the options defined below
-   * users - used to specify a user 
-   * applications - used to specify an application
-   * workspaces - used to specify a workspace
-   * containers - used to specify a container
-   * records - used to specify a record
+   * user - used to specify a user 
+   * application - used to specify an application
+   * workspace - used to specify a workspace
+   * container - used to specify a container
+   * record - used to specify a record
+   * role - used to specify a role
+   * container_permission - used to specify a container_permission
+   * role_permission - used to specify a role_permission
+   * record_permission - used to specify a record_permission
+   * record_type - used to specify a record_type
  * object - the unique identifier for the object as defined below
-   * users - the id or email address of a user 
-   * applications - the id or name of the application (We highly recommend using IDs since names can change)
-   * workspaces - the id or name of the workspace (We highly recommend using IDs since names can change)
-   * containers - the GUID or name of the container (We highly recommend using GUIDs since names can change)
-   * records - the GUID of the record
+   * user - the id or email address of a user 
+   * application - the id or name of the application
+   * workspace - the id or name of the workspace 
+   * container - the GUID or name of the container 
+   * record - the GUID of the record
+   * role - the id or name of the role
+   * container_permission - the id or name of the container permission
+   * record_permission - the id or name of the role permission
+   * role_permission - the id or name of the role permission
+   * record_type - the id or name of the record type
+   
    
 ---
