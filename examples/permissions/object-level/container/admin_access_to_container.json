@@ -8,8 +8,7 @@
       ],
       "actions": [
         "pcrn:12345678:action/container:*",
-        "pcrn:12345678:action/record:get",
-        "pcrn:12345678:action/record:list"
+        "pcrn:12345678:action/record:get"
       ],
       "on_objects": [
         "THIS WILL BE IGNORED SINCE IT IS A CONTAINER PERMISSION. BY DEFAULT, CONTAINER PERMISSIONS APPLY TO THE CONTAINER ITS APPLIED TO AND RECORDS WITHIN THAT CONTAINER."

@@ -28,7 +28,6 @@
       ],
       "actions": [
         "pcrn:12345678:action/record:get",
-        "pcrn:12345678:action/record:list",
         "pcrn:12345678:action/record:update",
         "pcrn:12345678:action/record:delete"
       ],

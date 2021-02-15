@@ -45,6 +45,7 @@ level list of endpoints available in PrivCloud. For a full and always up-to-date
 | workspace_tag:create | POST /api/workspace_tag | Create a workspace tag |
 | workspace_tag:delete | DELETE /api/workspace_tag/{workspace_id}/{tag} | Delete a workspace tag |
 | container:list | GET /api/workspace/{id}/containers | Get a list of containers in workspace ID |
+| container:list_records | GET /api/container/{guid}/records | List records in a container | 
 | container:get | GET /api/container/{guid} | Get a container based on containers' GUID |
 | container:delete | DELETE /api/container/{guid} | Delete a container based on containers' GUID |
 | container:update | PATCH /api/container/{guid} | Update a container based on the containers' GUID |
@@ -57,7 +58,6 @@ level list of endpoints available in PrivCloud. For a full and always up-to-date
 | record_type:delete | DELETE /api/record_type/{id} | Delete a record_type based on record types' ID |
 | record_type:update | PATCH /api/record_type/{id} | Update a record_type based on the record types' ID |
 | record_type:create | POST /api/record_type | Create a record type |
-| record:list | GET /api/container/{guid}/records | List records in a container | 
 | record:get | GET /api/record/{guid} | Get an encrypted record based on its GUID | 
 | record:get_with_redact | GET /api/record/{guid}?option=redact | Get an redacted record based on its GUID | 
 | record:get_with_anonymize | GET /api/record/{guid}?option=anonymize | Get an anonymized record based on its GUID | 
