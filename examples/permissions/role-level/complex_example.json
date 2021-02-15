@@ -11,7 +11,7 @@
         "pcrn:12345678:action/*:*"
       ],
       "on_objects": [
-        "pcrn:12345678:object/workspaces:NorthAmerica:container:*:record:*"
+        "pcrn:12345678:object/workspace:NorthAmerica:container:*:record:*"
       ],
       "decision": "deny",
       "conditions": {
