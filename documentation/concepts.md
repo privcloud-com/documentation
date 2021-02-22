@@ -112,7 +112,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2ZXJzaW9uIjoxLCJ0eXBlIjoiYXBwbGljYXRpb25
 
 #### Roles
 Roles are used to design sets of role-permissions that can be assigned to entities. Roles can one or more
-[permissions](documentation/permissions.md) assigned to them. When a user or application is assigned a role they automatically
+[permissions](permissions.md) assigned to them. When a user or application is assigned a role they automatically
 inherit the role-permissions assigned to the role. 
 
 #### Permissions
@@ -120,4 +120,4 @@ Permissions are used to define how entities can interact with the records, conta
 configuration stored in PrivCloud. Permissions are defined as JSON documents and can be applied to either a role 
  or an object (for containers and records). Examples of permissions can be found in the permissions [examples](examples/permissions) 
  directory.  Full details of how role-based and object-based permissions can be used and defined can be found in the 
- [permissions documentation](documentation/permissions.md).
+ [permissions documentation](permissions.md).
