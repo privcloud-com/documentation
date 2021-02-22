@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PrivCloud 
 PrivCloud is a secure, high-performing, cloud data-layer for storing sensitive, private information and records. Our platform is designed 
 for you to securely store, encrypt, access, process, and grant access to semi-structured sensitive data. We do this by tokenizing your 
@@ -73,7 +72,3 @@ You can find details on the [concepts](documentation/concepts.md) page and start
 
 ## Contact
 We are happy to assist if you have any additional questions about PrivCloud, just email us @ <help@privcloud.com>.
-
-=======
-# privcloud-documentation
->>>>>>> 3d4f8f8f3167e97207eba06b968467c5210d1fde
