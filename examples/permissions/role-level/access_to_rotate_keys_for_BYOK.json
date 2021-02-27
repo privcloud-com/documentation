@@ -8,7 +8,7 @@
         "pcrn:12345678:entity/application:app-integration-keyrotationspecialist"
       ],
       "actions": [
-        "pcrn:12345678:action/container:update_key"
+        "pcrn:12345678:action/container:rotate_key"
       ],
       "on_objects": [
         "pcrn:12345678:object/workspace:SaaS-Applications:container:Product1"
