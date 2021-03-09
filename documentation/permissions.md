@@ -2,7 +2,7 @@
 Permissions are used to define how users and applications can interact with the records, containers, workspaces, and other
 configuration stored in PrivCloud. Permissions are defined as JSON documents and can be applied to either a role 
 (for users and applications) or an object (for containers and records). Examples of permissions can be found in the 
-permissions  [examples](examples/permissions) directory.  A full description of how role-based and object-based permissions work can be 
+permissions  [examples](../examples/permissions) directory.  A full description of how role-based and object-based permissions work can be 
 found below.
 
 ## Structure
