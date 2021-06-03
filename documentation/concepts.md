@@ -48,7 +48,7 @@ Example Record Of Record Type [Credit Card Account](examples/credit_cards_accoun
 		"street": "1234 street",
 		"state": "TX",
 		"country": "United States",
-		"zip": 67743
+		"zip": "67743"
 	},
 	"creditCards": [{
 		"number": "1234-5678-9101-1213",
