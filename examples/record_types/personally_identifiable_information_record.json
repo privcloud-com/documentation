@@ -38,8 +38,9 @@
           "description": "The state of the address."
         },
         "zip": {
-          "type": "number",
-          "description": "The zip code of the address."
+            "type": "string",
+            "description": "The zip code associated with the credit card.",
+            "pattern": "^[0-9]{5}"
         }
       }
     },
