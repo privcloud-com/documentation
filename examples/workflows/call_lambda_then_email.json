@@ -1,0 +1,96 @@
+{
+    "version": 1,
+    "comment": "This is an example workflow that shows how to call a lambda function and, based on the response, send an email or end the workflow",
+    "scope": {
+        "on_action": "record:create",
+        "filter": {
+            "field": "record.container_guid",
+            "operator": "in",
+            "value": [
+                "5d0a5876dc8d4963a9b84655e06943f8",
+                "1ef08b54fae94f49a725f06f8002b81d"
+            ]
+        }
+    },
+    "start_at": "call_lambda",
+    "steps": {
+        "call_lambda": {
+            "comment": "This step calls a lambda function in AWS, passing the decrypted record provided to the record:create action to the function",
+            "type": "lambda",
+            "parameters": {
+                "arn": "arn:aws:lambda:us-east-2:123456789012:function:my-function:1",
+                "role": "arn:aws:iam::123456789012:role/lambda-role"
+            },
+            "next": "lambda_response_choice"
+        },
+        "lambda_response_choice": {
+            "comment": "This step recieves the response from the lambda function and, based on the 'success' and 'count' response attributes, send an email or stops the workflow",
+            "type": "if",
+            "parameters": {
+                "conditions": [
+                    {
+                        "comment": "This condition checks the response of the lambda function for 'success' being true and 'count' being less than 10",
+                        "type": "condition",
+                        "condition": {
+                            "and": {
+                                "condition1": {
+                                    "field": "call_lambda.result",
+                                    "operator": "=",
+                                    "value": "success"
+                                },
+                                "condition2": {
+                                    "field": "call_lambda.count",
+                                    "operator": "<",
+                                    "value": 10
+                                }
+                            }
+                        },
+                        "next": "send_email"
+                    },
+                    {
+                        "comment": "This condition checks the response of the lambda function for 'success' being true and 'count' being between 11 and 20",
+                        "type": "condition",
+                        "condition": {
+                            "and": {
+                                "condition1": {
+                                    "field": "lambda_result.result",
+                                    "operator": "=",
+                                    "value": "success"
+                                },
+                                "and": {
+                                    "condition2": {
+                                        "field": "lambda_result.count",
+                                        "operator": ">",
+                                        "value": 11
+                                    },
+                                    "condition3": {
+                                        "field": "lambda_result.count",
+                                        "operator": "<",
+                                        "value": 20
+                                    }
+                                }
+                            }
+                        },
+                        "next": "send_email"
+                    },
+                    {
+                        "comment": "This is the default condition if no other conditions are met",
+                        "type": "end"
+                    }
+                ]
+            }
+        },
+        "send_email": {
+            "comment": "This step sends an email to the security team, notifying them of the record creation",
+            "type": "email",
+            "next": "none",
+            "parameters": {
+                "subject": "Record {{record.guid}} Created After Lambda Count {{lambda_result.count}}",
+                "body": "This is an example body with interpolated variables like record.guid={{record.guid}} and lambda_result.result={{lambda_result}} and lambda_result.count={{lambda_result.count}}. Variables passed as output from previous functions are always available for interpolation.\n\nFrom PrivCloud",
+                "recipients": [
+                    "danny@privcloud.com"
+                ]
+            }
+        }
+    }
+}

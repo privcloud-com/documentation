@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "comment": "Send an SMS when any user changed",
+    "scope": {
+        "on_action": "user:update"
+    },
+    "start_at_step": "send_sms_to_security_team",
+    "steps": {
+        "send_sms_to_security_team": {
+            "comment": "This step send an SMS with the user details to the security team",
+            "type": "sms",
+            "parameters": {
+                "body": "User {{user.email}} updated by {{request_context.entity_pcrn}} from IP address {{request_context.client_ip}}",
+                "recipients" : ["security@companyx.com"]
+            },
+            "next": "none"
+        }
+    }
+}

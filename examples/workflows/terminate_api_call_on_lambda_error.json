@@ -1,0 +1,43 @@
+    {
+    "version": 1,
+    "comment": "This workflow will terminate the container creation API call if our lambda function returns an error",
+    "scope": {
+        "on_action": "container:create"
+    },
+    "start_at_step": "call_lambda",
+    "steps": {
+        "call_lambda": {
+            "comment": "This step calls a lambda function in AWS, passing the container as part of the data dictionary",
+            "type": "lambda",
+            "parameters": {
+                "function": "arn:aws:lambda:us-east-2:123456789012:function:evaluate-container-configuration",
+                "role": "arn:aws:iam::123456789012:role/lambda-role"
+            },
+            "next": "lambda_response_choice"
+        },
+        "lambda_response_choice": {
+            "comment": "This step recieves the response from the lambda function and, based on the 'error_message' response attribute, lets the api call through via a workflow stoppage or drops the API call altogether on error",
+            "type": "if",
+            "conditions": [
+                {
+                    "comment": "This condition checks the response of the lambda function for 'error_message' being set",
+                    "type": "condition",
+                    "condition": {
+                        "fields": "{{call_lambda.error_message}}",
+                        "operator": "not_empty",
+                        "value": []
+                    },
+                    "next": "drop_api_call"
+                },
+                {
+                    "comment": "This is an explicit stop, this doesn't really need to be here but better to be explicit",
+                    "type": "stop"
+                }
+            ]
+        },
+        "drop_api_call": {
+            "comment": "Drop the API call",
+            "type": "drop"
+        }
+    }
+}

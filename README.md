@@ -57,12 +57,13 @@ As a SaaS provider, you are constantly inundated with requests from customers fo
 
 ## Overview
 PrivCloud is architected to be flexible and meet your needs of securing critical data. At the highest level, data can be 
- isolated by workspaces. Within workspaces, you are able to create one or many containers. [Containers](documentation/containers.md) 
+ isolated by workspaces. Within workspaces, you are able to create one or many containers. [Containers](documentation/concepts.md#container) 
  are highly configurable and able to store semi-structured individual records. The structure of these records defined by a 
  [record type](documentation/record-types.md). Containers can only store records of specific record types that you configure. 
  A visual representation of this architecture is below. Granting access to workspaces, containers, and records is all configurable
  through our [permissions system](documentation/permissions.md). You can grant individual [users](#users) or [applications](#applications) 
- through this system.
+ through this system. [Workflows](documentation/workflows.md) is event-hook orchestration system that allows you to customize
+ and extend PrivCloud and tailor it to your use case and business.
 
 ![PrivCloud Overview](images/privcloud_overview.png)
 

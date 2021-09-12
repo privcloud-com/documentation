@@ -15,13 +15,19 @@ as well as for applying permissions for your users and applications. Note: works
 #### Container
 Containers are where the magic happens. Containers hold encrypted records and each container has a separate [encryption wrapping 
 key](#encryption-wrapping-key). They are designed to allow you to define your encryption rotation policy and encryption keys. 
-The key can be managed by PrivCloud or you can optionally bring your own key to use for encryption. By default, container 
-keys are rotated every month, but you can configure your policy for rotation. The container 
-is configured to hold one or more record types and the structure of each record created in the container must match the 
-configured record types. Containers are great for isolating data within a workspace. For example, if you have multiple SaaS 
-applications using PrivCloud for storage, you should create a separate container for each. In another example, if you want 
-to provide BYOK capabilities to your customers for your SaaS application, you should create separate containers for each 
-customer and have them upload their own encryption key to be used for encrypting data in their container. 
+The key can be managed by PrivCloud or you can optionally bring your own key to use for encryption. Containers must be initialized
+after they are created and prior to data being loaded into them. By default, container 
+keys are rotated every month, but you can configure your policy for rotation. The container  is configured to hold one or 
+more record types and the structure of each record created in the container must match the configured record types. 
+Containers are great for isolating data within a workspace. For example, if you have multiple SaaS applications using 
+PrivCloud for storage, you should create a separate container for each. In another example, if you want to provide BYOK 
+capabilities to your customers for your SaaS application, you should create separate containers for each customer and 
+have them upload their own encryption key to be used for encrypting data in their container. Once containers are initialized, data can
+be loaded using [import](actions.md) functionality. Asynchronous imports make it possible to bulk load large amounts of data into PrivCloud
+very quickly and easily. [Scripts](https://github.com/privcloud-com/privcloud-scripts) are available to assist with this process.
+Once data is loaded, containers can be "frozen". A frozen container means that the data held within the container can only be read but not
+modified or deleted. If a container is frozen it also cannot have additional data loaded into it. Freezing a container is a great option
+if you would like to share critical data but do not want it modified for any reason by anyone that you are sharing it with.
 
 #### Encryption Wrapping Key
 PrivCloud uses the wrapping key best practice methodology for encryption. Wrapping keys are used to generate data keys, 
@@ -34,8 +40,17 @@ as well as for applying permissions for your users and applications. Note: conta
 
 #### Record
 Records are the actual data that you care about. They are semi-structured (JSON) based on their record types. Records can 
-be as large or as small as you want. 
+be as large or as small as you want. Records can be [searched](actions.md), but only unencrypted fields defined in the record type, 
+tags, and metadata are searched. Once created, records can be frozen. If a record is frozen, it can be read but not 
+modified or deleted. Records can be transformed when they are retrieved. By default, records are encrypted, but they can also
+be retrieved in decrypted, anonymized, or redacted form. Only fields with encryption applied have transformations applied
+when they are retrieved. Transformations are useful for sharing data in a secure way (EX: redacted) or for testing applications in
+a secure way (EX: anonymizing data). Definitions of each transformation is below.
 
+ * **encrypt** : fields are returned encrypted (EX: "John" returned as "ftYcQTahxTvtrA==")
+ * **decrypt** : fields are returned decrypted (EX: "John" returned as "John")
+ * **anonymize** : fields are anonymized prior to being returned (EX: "John" may become "Joe") 
+ * **redact** : fields are fully redacted prior to being returned (EX: "John" returned as "****")
 
 Example Record Of Record Type [Credit Card Account](examples/credit_cards_account_record.json)
 

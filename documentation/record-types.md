@@ -3,10 +3,11 @@ Record types are used to define the structure and encryption policy of the recor
 defined as JSON documents and can applied to containers to configure the types of records that can be stored in that 
 container. If you attempt to create a record or modify an existing record with a structure that isn't configured in your container
 the system will deny it. The format used to define record types is [JSON Schema](https://json-schema.org/). Examples of record types 
-can be found in the [record types](examples/record_types) directory.
+can be found in the [record types](examples/record_types) directory.  
 
 An important consideration is which properties in your record types is which properties are encrypted. You *cannot* search against 
-record type values that are encrypted. You *can* search against record type values that are not encrypted.
+record type values that are encrypted. You *can* search against record type values that are not encrypted. You can also search
+against record tags and record metadata that are associated with the record.
 
 Below are a few scenarios describing when value encryption is enforced and when it isn't. In this example, you will not be
 able to search against the "firstName" property but you will be able to search against the "jobRole" property. 
