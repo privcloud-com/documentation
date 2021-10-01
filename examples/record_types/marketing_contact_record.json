@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "MarketingContact",
-  "description": "This is a record type intended to store marketing contacts within PrivCloud. This example is to show what it looks like to define a PII record type in PrivCloud. All record types in PrivCloud follow the JSON Schema specification (https://json-schema.org). More examples can be found on the PrivCloud GitHub site and here @ https://json-schema.org/learn/miscellaneous-examples.html",
+  "description": "This is a record type schema intended to store marketing contacts within PrivCloud.",
   "type": "object",
   "required": ["firstName", "lastName", "jobTitle", "jobFunction", "jobLevel", "company", "companyAddress", "emailAddresses"],
   "properties": {

@@ -2,15 +2,16 @@
   "version": 1,
   "rules": [
     {
-      "comment": "This role grants you permission to manage all user's entities.",
+      "comment": "This role grants you permission to manage all application's and user's entities.",
       "requestors": [
         "pcrn:12345678:entity/*:*"
       ],
       "actions": [
+        "pcrn:12345678:action/application:*",
         "pcrn:12345678:action/user:*"
       ],
       "on_objects": [
-        "pcrn:12345678:entity/user:*"
+        "pcrn:12345678:entity/*:*"
       ],
       "decision": "allow",
       "conditions": {}

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PatientHealthRecord",
-  "description": "This is an example record type schema of data that would be stored in an EHR/EMR. All record types in PrivCloud follow the JSON Schema specification (https://json-schema.org). More examples can be found on the PrivCloud GitHub site and here @ https://json-schema.org/learn/miscellaneous-examples.html",
+  "description": "This is a record type schema of data that would be stored in an EHR/EMR.",
   "type": "object",
   "required": ["socialSecurityNumber","patientIDD","firstName","lastName","phoneNumber", "address", "employmentStatus", "race", "age", "gender", "medications", "vitals"],
   "properties": {

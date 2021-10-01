@@ -2,12 +2,13 @@
   "version": 1,
   "rules": [
     {
-      "comment": "This 'super admin' role allow you to perform all admin activities and have full access to all endpoints.",
+      "comment": "This 'read only' role grants you read/list access to all endpoints.",
       "requestors": [
         "pcrn:12345678:entity/*:*"
       ],
       "actions": [
-        "pcrn:12345678:action/*:*"
+        "pcrn:12345678:action/*:get",
+        "pcrn:12345678:action/*:list"
       ],
       "on_objects": [
         "pcrn:12345678:entity/*:*",
