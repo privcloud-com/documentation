@@ -38,7 +38,7 @@
                     "condition": {
                         "field": "{{record.record['first_name']}}",
                         "operator": "~",
-                        "value": "danny@(privcloud|pc)\.com"
+                        "value": "danny@(privcloud|pc)\\.com"
                     },
                     "next": "call_webhook"
                 },
