@@ -1,17 +1,31 @@
 {
+    "active": false,
     "version": 1,
     "comment": "Call our webhook if a new record field name 'first_name' matches a regular expression",
     "scope": {
-        "on_action": "record:create"
+        "on_action": "record:create",
+        "type": "post"
     },
-    "start_at_step": "call_lambda",
+    "start_at": "call_lambda",
+    "name": "Call Webhook If Regex Match In Record",
     "steps": {
+         "call_lambda": {
+            "comment": "This step calls a lambda function in AWS, passing the decrypted record provided to the record:create action to the function",
+            "type": "lambda",
+            "parameters": {
+                "arn": "arn:aws:lambda:us-east-2:123456789012:function:my-function:1",
+                "role": "arn:aws:iam::123456789012:role/lambda-role",
+                "payload": "{123: 123}"
+            },
+            "next": "call_webhook_if_record_matches"
+        },
         "call_webhook": {
             "comment": "This calls a user-defined webhook to evaluate something prior to inserting a new record",
             "type": "webhook",
             "next": "none",
             "parameters": {
-                "url": "https://mywebapi.com/webhook/privacy"
+                "url": "https://mywebapi.com/webhook/privacy",
+                "json_data": {}
             }
         },
         "call_webhook_if_record_matches": {
