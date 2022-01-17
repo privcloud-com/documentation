@@ -1,10 +1,13 @@
 {
+    "active": false,
     "version": 1,
     "comment": "Send an SMS when any user changed",
     "scope": {
-        "on_action": "user:update"
+        "on_action": "user:update",
+        "type": "post"
     },
-    "start_at_step": "send_sms_to_security_team",
+    "start_at": "send_sms_to_security_team",
+    "name": "Sms On User Change",
     "steps": {
         "send_sms_to_security_team": {
             "comment": "This step send an SMS with the user details to the security team",

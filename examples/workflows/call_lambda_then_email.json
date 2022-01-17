@@ -1,8 +1,9 @@
 {
+    "active": true,
     "version": 1,
-    "comment": "This is an example workflow that shows how to call a lambda function and, based on the response, send an email or end the workflow",
+    "comment": "Big comment",
     "scope": {
-        "on_action": "record:create",
+        "on_action": "record:update",
         "filter": {
             "field": "record.container_guid",
             "operator": "in",
@@ -10,16 +11,19 @@
                 "5d0a5876dc8d4963a9b84655e06943f8",
                 "1ef08b54fae94f49a725f06f8002b81d"
             ]
-        }
+        },
+        "type": "pre"
     },
     "start_at": "call_lambda",
+    "name": "Call Lambda Then Email",
     "steps": {
         "call_lambda": {
             "comment": "This step calls a lambda function in AWS, passing the decrypted record provided to the record:create action to the function",
             "type": "lambda",
             "parameters": {
                 "arn": "arn:aws:lambda:us-east-2:123456789012:function:my-function:1",
-                "role": "arn:aws:iam::123456789012:role/lambda-role"
+                "role": "arn:aws:iam::123456789012:role/lambda-role",
+                "payload": "{123: 123}"
             },
             "next": "lambda_response_choice"
         },
@@ -34,12 +38,12 @@
                         "condition": {
                             "and": {
                                 "condition1": {
-                                    "field": "call_lambda.result",
+                                    "field": "{{call_lambda.result}}",
                                     "operator": "=",
                                     "value": "success"
                                 },
                                 "condition2": {
-                                    "field": "call_lambda.count",
+                                    "field": "{{call_lambda.count}}",
                                     "operator": "<",
                                     "value": 10
                                 }
@@ -53,18 +57,18 @@
                         "condition": {
                             "and": {
                                 "condition1": {
-                                    "field": "lambda_result.result",
+                                    "field": "{{call_lambda.result}}",
                                     "operator": "=",
                                     "value": "success"
                                 },
                                 "and": {
                                     "condition2": {
-                                        "field": "lambda_result.count",
+                                        "field": "{{call_lambda.count}}",
                                         "operator": ">",
                                         "value": 11
                                     },
                                     "condition3": {
-                                        "field": "lambda_result.count",
+                                        "field": "{{call_lambda.count}}",
                                         "operator": "<",
                                         "value": 20
                                     }
@@ -75,7 +79,7 @@
                     },
                     {
                         "comment": "This is the default condition if no other conditions are met",
-                        "type": "end"
+                        "type": "stop"
                     }
                 ]
             }
@@ -85,11 +89,9 @@
             "type": "email",
             "next": "none",
             "parameters": {
-                "subject": "Record {{record.guid}} Created After Lambda Count {{lambda_result.count}}",
-                "body": "This is an example body with interpolated variables like record.guid={{record.guid}} and lambda_result.result={{lambda_result}} and lambda_result.count={{lambda_result.count}}. Variables passed as output from previous functions are always available for interpolation.\n\nFrom PrivCloud",
-                "recipients": [
-                    "danny@privcloud.com"
-                ]
+                "subject": "Record {{request_context.record.guid}} Created After Lambda Count {{call_lambda.count}}",
+                "body": "This is an example body with interpolated variables like record.guid={{request_context.record.guid}} and lambda_result.result={{call_lambda}} and lambda_result.count={{call_lambda.count}}. Variables passed as output from previous functions are always available for interpolation.\n\nFrom PrivCloud",
+                "recipients": ["danny@privcloud.com", "{{call_lambda.admin_email}}"]
             }
         }
     }

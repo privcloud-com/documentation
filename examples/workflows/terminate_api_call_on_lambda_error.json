@@ -1,17 +1,21 @@
-    {
+{
+    "active": true,
     "version": 1,
     "comment": "This workflow will terminate the container creation API call if our lambda function returns an error",
     "scope": {
-        "on_action": "container:create"
+        "on_action": "container:create",
+        "type": "pre"
     },
-    "start_at_step": "call_lambda",
+    "start_at": "call_lambda",
+    "name": "Terminate Api Call On Lambda Error",
     "steps": {
         "call_lambda": {
             "comment": "This step calls a lambda function in AWS, passing the container as part of the data dictionary",
             "type": "lambda",
             "parameters": {
                 "function": "arn:aws:lambda:us-east-2:123456789012:function:evaluate-container-configuration",
-                "role": "arn:aws:iam::123456789012:role/lambda-role"
+                "role": "arn:aws:iam::123456789012:role/lambda-role",
+                "payload": "{123: 123}"
             },
             "next": "lambda_response_choice"
         },
