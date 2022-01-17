@@ -14,7 +14,8 @@
             "type": "lambda",
             "parameters": {
                 "function": "arn:aws:lambda:us-east-2:123456789012:function:evaluate-container-configuration",
-                "role": "arn:aws:iam::123456789012:role/lambda-role"
+                "role": "arn:aws:iam::123456789012:role/lambda-role",
+                "payload": "{123: 123}"
             },
             "next": "lambda_response_choice"
         },
