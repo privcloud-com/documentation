@@ -52,7 +52,7 @@ a secure way (EX: anonymizing data). Definitions of each transformation is below
  * **anonymize** : fields are anonymized prior to being returned (EX: "John" may become "Joe") 
  * **redact** : fields are fully redacted prior to being returned (EX: "John" returned as "****")
 
-Example Record Of Record Type [Credit Card Account](examples/credit_cards_account_record.json)
+Example Record Of Record Type [Credit Card Account](../examples/record_types/credit_cards_account_record.json)
 
 ```
 {
@@ -92,8 +92,8 @@ as well as for applying permissions for your users and applications. Note: recor
 Record types are used to define the structure and encryption policy of the records that are stored in PrivCloud. They are 
 defined as JSON documents and can applied to containers to configure the types of records that can be stored in that 
 container.  The format used to define record types is [JSON Schema](https://json-schema.org/). Examples of record types 
-can be found in the [record types](examples/record_types) directory. For more details on record types, go to the 
-[record types](documentation/record-types.md) documentation. Record types cannot be modified once they are created.
+can be found in the [record types](../examples/record_types) directory. For more details on record types, go to the 
+[record types](record-types.md) documentation. Record types cannot be modified once they are created.
 
 #### Object
 Data or organization structure in PrivCloud. This can include workspaces, containers, and records. 
@@ -115,7 +115,7 @@ for request signing and can be forced to authenticate with TOTP multifactor auth
 
 #### Access Tokens
 Access tokens are JWT tokens generated for [users](#users) and [applications](#applications) and used to authenticate to PrivCloud.
-Access tokens can be configured to have [conditions](documentation/conditions.md) that ensure entities can only access the
+Access tokens can be configured to have [conditions](conditions.md) that ensure entities can only access the
 system under certain constraints. Access tokens are passed to PrivCloud as part of the [Authorization HTTP](https://swagger.io/docs/specification/authentication/bearer-authentication/)
 header. Once a user is authenticated, their access token gets converted to an authorization token, which can be used for the 
 remainder of their session. All authorization tokens retain their conditions.
