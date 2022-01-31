@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SuiteCRM Contact Information",
+  "description": "This is a record type schema intended to store suitecrm contact information.",
+  "type": "object",
+  "required": ["first_name", "last_name", "phone_home", "email"],
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Description"
+    },
+    "salutation": {
+      "type": "string",
+      "length": 255,
+      "description": "The person's salutation."
+    },
+    "first_name": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's first name."
+    },
+    "last_name": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's last name."
+    },
+    "title": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's title."
+    },
+    "photo": {
+      "type": "string",
+      "length": 255,
+      "description": "The person's photo url."
+    },
+    "department": {
+      "type": "string",
+      "length": 255,
+      "description": "The person's department."
+    },
+    "do_not_call": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "phone_home": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's home phone number."
+    },
+    "phone_mobile": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's mobile phone number."
+    },
+    "phone_work": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's work phone number."
+    },
+    "phone_fax": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's fax."
+    },
+    "email": {
+      "type": "string",
+      "length": 100,
+      "pattern": "[^@]+@[^@]+\\.[^@]+",
+      "description": "The person's email address."
+    },
+    "lawful_basis": {
+      "type": "string",
+      "length": 100
+    },
+    "date_reviewed": {
+      "type": "string"
+    },
+    "lawful_basis_source": {
+      "type": "string",
+      "length": 100
+    },
+    "primary_address_street": {
+      "type": "string",
+      "length": 150,
+      "description": "The person's primary street address."
+    },
+    "primary_address_city": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's city."
+    },
+    "primary_address_state": {
+      "type": "string",
+      "length": 100,
+      "description": "The person's state."
+    },
+    "primary_address_postalcode": {
+      "type": "string",
+      "length": 20,
+      "description": "The person's postal code."
+    },
+    "primary_address_country": {
+      "type": "string",
+      "length": 255,
+      "description": "The person's country."
+    },
+    "alt_address_street": {
+      "type": "string",
+      "length": 150,
+      "description": "Alternative street address"
+    },
+    "alt_address_city": {
+      "type": "string",
+      "length": 100,
+      "description": "Alternative city"
+    },
+    "alt_address_state": {
+      "type": "string",
+      "length": 100,
+      "description": "Alternative state"
+    },
+    "alt_address_postalcode": {
+      "type": "string",
+      "length": 20,
+      "description": "Alternative postal code"
+    },
+    "alt_address_country": {
+      "type": "string",
+      "length": 255,
+      "description": "Alternative country"
+    },
+    "assistant": {
+      "type": "string",
+      "length": 75,
+      "description": "The person's assistant."
+    },
+    "assistant_phone": {
+      "type": "string",
+      "length": 75,
+      "description": "The person's assistant pone number."
+    },
+    "lead_source": {
+      "type": "string",
+      "length": 100
+    },
+    "reports_to_id": {
+      "type": "string",
+      "length": 36
+    },
+    "birthdate": {
+      "type": "string",
+      "description": "The person's birthdate."
+    },
+    "campaign_id": {
+      "type": "string",
+      "length": 36,
+      "description": "The person's campaign id."
+    },
+    "joomla_account_id": {
+      "type": "string",
+      "length": 255,
+      "description": "The person's joomla account id."
+    },
+    "portal_account_disabled": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "portal_user_type": {
+      "type": "string",
+      "length": 100,
+      "description": "Portal user type"
+    }
+  }
+}
