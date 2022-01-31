@@ -7,12 +7,19 @@
   "properties": {
     "description": {
       "type": "string",
-      "description": "Description"
+      "description": "Description",
+      "encrypt": false
+    },
+    "deleted": {
+      "type": "boolean",
+      "description": "Whether the contact is soft deleted or not",
+      "encrypt": false
     },
     "salutation": {
       "type": "string",
       "length": 255,
-      "description": "The person's salutation."
+      "description": "The person's salutation.",
+      "encrypt": false
     },
     "first_name": {
       "type": "string",
@@ -27,7 +34,8 @@
     "title": {
       "type": "string",
       "length": 100,
-      "description": "The person's title."
+      "description": "The person's title.",
+      "encrypt": false
     },
     "photo": {
       "type": "string",
@@ -40,9 +48,9 @@
       "description": "The person's department."
     },
     "do_not_call": {
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 1
+      "type": "boolean",
+      "description": "Whether the contact is available for contact or not.",
+      "encrypt": false
     },
     "phone_home": {
       "type": "string",
@@ -66,13 +74,14 @@
     },
     "email": {
       "type": "string",
-      "length": 100,
+      "length": 255,
       "pattern": "[^@]+@[^@]+\\.[^@]+",
       "description": "The person's email address."
     },
     "lawful_basis": {
       "type": "string",
-      "length": 100
+      "length": 100,
+      "description": "Lawful basis for collecting the contact's PII"
     },
     "date_reviewed": {
       "type": "string"
@@ -143,7 +152,8 @@
     },
     "lead_source": {
       "type": "string",
-      "length": 100
+      "length": 100,
+      "encrypt": false
     },
     "reports_to_id": {
       "type": "string",
@@ -156,7 +166,8 @@
     "campaign_id": {
       "type": "string",
       "length": 36,
-      "description": "The person's campaign id."
+      "description": "The person's campaign id.",
+      "encrypt": false
     },
     "joomla_account_id": {
       "type": "string",
@@ -164,14 +175,15 @@
       "description": "The person's joomla account id."
     },
     "portal_account_disabled": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 1
+      "type": "boolean",
+      "description": "Whether the contact's portal account is disabled or not",
+      "encrypt": false
     },
     "portal_user_type": {
       "type": "string",
       "length": 100,
-      "description": "Portal user type"
+      "description": "Portal user type",
+      "encrypt": false
     }
   }
 }
